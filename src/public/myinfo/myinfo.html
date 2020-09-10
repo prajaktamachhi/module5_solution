@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="text-center">Registered Information</h2>
+    <section class="text-center" ng-if="!myInfoCtrl.user">
+        Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+    </section>
+    <section ng-if="myInfoCtrl.user">
+        <table class="table">
+            <tr>
+                <td>Name</td>
+                <td colspan="3">{{myInfoCtrl.user.firstname}} {{myInfoCtrl.user.lastname}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{myInfoCtrl.user.email}}</td>
+                <td>Phone</td>
+                <td>{{myInfoCtrl.user.phone}}</td>
+            </tr>
+        </table>
+        <h2 class="text-center">Favorite Menu</h2>
+        <menu-item menu-item="myInfoCtrl.user.savedmenuitem"></menu-item>
+    </section>
+</div>
